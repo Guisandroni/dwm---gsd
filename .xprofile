@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# Inicia o DBus se não estiver rodando (essencial para comunicação entre apps)
 if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
     eval $(dbus-launch --exit-with-session --sh-syntax)
 fi
 
-# Inicia o Gnome Keyring e exporta as variáveis para o ambiente todo
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
@@ -21,6 +19,4 @@ export QT_QTPA_PLATFORMTHEME="qt5ct"
 
 
 
-# Dica: Se precisar de um agente de autenticação para polkit (para pedir senha de root em GUI)
-# Descomente a linha abaixo se tiver o polkit-gnome instalado:
-# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+

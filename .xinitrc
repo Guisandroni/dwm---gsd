@@ -5,12 +5,11 @@
 #
 #
 
- # Inicia o DBus (se já não estiver iniciado pelo sistema)
  if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
      eval "$(dbus-launch --sh-syntax --exit-with-session)"
  fi
 
- # Inicia o Gnome Keyring Daemon
+ 
  eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
  export SSH_AUTH_SOCK
 
