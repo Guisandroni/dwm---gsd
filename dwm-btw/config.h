@@ -53,7 +53,7 @@ ResourcePref resources[]={
 
 static const char *const autostart[] = {
 	
-	"sh", "-c", "/home/guisandroni/dwm-btw/autostart.sh", NULL,
+	"sh", "-c", "/home/guisandroni/dwm/dwm-btw/autostart.sh", NULL,
 
 	 NULL
 };
